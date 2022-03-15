@@ -25,6 +25,33 @@ class EstatePropertyOffer(models.Model):
 
     def _inverse_date(self):
         for record in self:
-            print("=========================")
-            print((record.date_deadline - record.create_date).days)
             record.validity = (record.date_deadline - record.create_date).days
+
+    def status_change_accepted(self):
+        for rec in self:
+            if not rec.status:
+                rec.status = 'accepted'
+        if self.status == 'accepted':
+            self.property_id.selling_price = self.price
+            self.property_id.partner_id = self.partner_id
+        return True
+
+    def status_change_refused(self):
+        for rec in self:
+            if not rec.status:
+                rec.status = 'refused'
+        return True
+
+    # @api.onchange("status")
+    # def _onchange_status(self):
+    #     print("==================")
+    #     # print(self.property_id.offer_ids.mapped('price'))
+    #     print(self.price)
+    #     print(self.property_id.selling_price)
+    #     print("==================")
+    #     if self.status == 'accepted':
+    #         self.property_id.selling_price = self.price
+    #     print("==================")
+    #     # print(self.property_id.offer_ids.mapped('price'))
+    #     print(self.property_id.selling_price)
+    #     print("==================")

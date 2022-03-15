@@ -4,6 +4,10 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <form string="Test">
+                <header>
+                        <button name="sold_action" string="Sold" class="oe_highlight" type="object"/>
+                        <button name="sold_action_cancel" string="Cancel" class="oe_highlight" type="object"/>
+                    </header>
                 <sheet>
                     <div class="container">
                         <div class="row my-2">
@@ -13,6 +17,7 @@
                         <div class="row my-5">
                             <div class="col-sm">
                                 <group>
+                                    <field name="sold_status" string="Sold Status"/>
                                     <field name="property_type_id" string="Property Type"/>
                                     <field name="postcode" string="Postcode" />
                                     <field name="date_availability" string="Available From" />

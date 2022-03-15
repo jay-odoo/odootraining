@@ -18,9 +18,6 @@
                                 <field name="status"/>
                             </group>
                             <group>
-                                <field name="create_date"/>
-                            </group>
-                            <group>
                                 <field name="validity"/>
                             </group>
                             <group>
@@ -39,6 +36,8 @@
                 <tree string="Offers">
                     <field name="price"/>
                     <field name="partner_id"/>
+                    <button name="status_change_accepted" title="Accepted" type="object" class="btn text-success fa fa-check"/>
+                    <button name="status_change_refused" title="Refused" type="object"  class="btn text-success fa fa-times"/>
                     <field name="status"/>
                 </tree>
             </field>

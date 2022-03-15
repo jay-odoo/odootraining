@@ -1,5 +1,6 @@
 from odoo import fields, models, api
 from datetime import datetime, timedelta
+from odoo.exceptions import UserError
 
 
 class EstateProperty(models.Model):
@@ -19,7 +20,7 @@ class EstateProperty(models.Model):
                                     default=lambda self: datetime.date(datetime.today() + timedelta(days=90)),
                                     copy=False)
     expected_price = fields.Float(required=True)
-    selling_price = fields.Float(copy=False, readonly=True)
+    selling_price = fields.Float(copy=False, readonly=True, store=True)
     best_price = fields.Float(compute='_compute_price', store=True)
     bedrooms = fields.Integer(default=2)
     living_area = fields.Integer()
@@ -28,6 +29,11 @@ class EstateProperty(models.Model):
     garden = fields.Boolean()
     garden_area = fields.Integer()
     total_area = fields.Integer(compute='_compute_area', store=True)
+    sold_status = fields.Selection(
+        string='Status',
+        selection=[('new', 'New'), ('sold', 'Sold'), ('canceled', 'Canceled')],
+        default='new'
+    )
     active = fields.Boolean(default=True)
     garden_orientation = fields.Selection(
         string='Garden Orientation',
@@ -59,3 +65,35 @@ class EstateProperty(models.Model):
         else:
             self.garden_area = 0
             self.garden_orientation = False
+
+    @api.onchange("offer_ids")
+    def _compute_sell_price(self):
+        for record in self:
+            if record.offer_ids.mapped('status') == 'accepted':
+                print("+++++++++++++++++++++++++++=====")
+                print(record.offer_ids.mapped('price'))
+
+    def sold_action(self):
+        for record in self:
+            if record.sold_status == "new":
+                record.sold_status = "sold"
+            elif record.sold_status == "sold":
+                raise UserError("Sold Property can not be sold again")
+            else:
+                raise UserError("Canceled Property can not be sold")
+            return True
+
+    def sold_action_cancel(self):
+        for rec in self:
+            if rec.sold_status == "new":
+                rec.sold_status = "canceled"
+            elif rec.sold_status == "sold":
+                raise UserError("Sold Property can not be cancelled")
+            else:
+                raise UserError("Property already canceled")
+            return True
+
+    def set_buyer(self):
+        for rec in self:
+            return True
+
