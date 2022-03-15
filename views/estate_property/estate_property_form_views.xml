@@ -1,0 +1,80 @@
+<odoo>
+    <record id="estate_property_view_form" model="ir.ui.view">
+        <field name="name">estate.property.form</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form string="Test">
+                <sheet>
+                    <div class="container">
+                        <div class="row my-2">
+                            <h2 class="display-5"><field name="property_type_id" string="Property Type"/> in <field name="city"/></h2>
+                        </div>
+                        <div class="row my-2"><field name="tag_ids" widget="many2many_tags"/></div>
+                        <div class="row my-5">
+                            <div class="col-sm">
+                                <group>
+                                    <field name="property_type_id" string="Property Type"/>
+                                    <field name="postcode" string="Postcode" />
+                                    <field name="date_availability" string="Available From" />
+                                    <field name="city" string="City"/>
+                                </group>
+                            </div>
+                            <div class="col-sm">
+                                <group>
+                                    <field name="name" string="Name"/>
+                                    <field name="expected_price" string="Expected Price" />
+                                    <field name="selling_price" string="Selling Price" />
+                                    <field name="best_price" string="Best Price"/>
+                                    <field name="tag_ids" widget="many2many_tags"/>
+                                </group>
+                            </div>
+                        </div>
+                    </div>
+                    <notebook>
+                        <page string="Description">
+                            <div class="container">
+                                <div class="row my-2">
+                                    <div class="col-sm">
+                                        <group>
+                                            <field name="description" string="Description" />
+                                            <field name="bedrooms" string="Bedrooms" />
+                                            <field name="living_area" string="Living Area" />
+                                            <field name="bedrooms" string="Bedrooms" />
+                                            <field name="facades" string="Facades" />
+                                            <field name="garage" string="Garage" />
+                                            <field name="garden" string="Garden" />
+                                            <field name="garden_area" string="Garden Area(sqm)" />
+                                            <field name="total_area" string="Total Area(sqm)" />
+                                            <field name="garden_orientation" string="Garden Orientation" />
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </page>
+                        <page string="Offers">
+                            <div class="container">
+                                <div class="row my-2">
+                                    <div class="col-sm">
+                                        <field name="offer_ids" string="Offers" />
+                                    </div>
+                                </div>
+                            </div>
+                        </page>
+                        <page string="Other info">
+                            <div class="container">
+                                <div class="row my-2">
+                                    <div class="col-sm">
+                                        <group>
+                                            <field name="user_id" string="Salesman" />
+                                            <field name="partner_id" string="Buyer" />
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
