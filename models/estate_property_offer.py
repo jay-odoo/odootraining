@@ -1,5 +1,6 @@
 from odoo import fields, models, api
 from datetime import datetime, timedelta
+from odoo.exceptions import UserError
 
 
 class EstatePropertyOffer(models.Model):
@@ -19,6 +20,17 @@ class EstatePropertyOffer(models.Model):
     create_date = fields.Date(string='Created date')
     validity = fields.Integer(default=7)
     date_deadline = fields.Date(compute="_compute_date", inverse="_inverse_date", store=True)
+
+    @api.model
+    def create(self, vals):
+        if [offerprice.price for offerprice in self.env['estate.property'].search([('id', '=', vals['property_id'])]).offer_ids]:
+            max_value = int(max([offerprice.price for offerprice in
+                                 self.env['estate.property'].search([('id', '=', vals['property_id'])]).offer_ids]))
+            if max_value > int(vals['price']):
+                raise UserError(f"Price must be greater than {max_value} !!")
+            return super(EstatePropertyOffer, self).create(vals)
+        else:
+            return super(EstatePropertyOffer, self).create(vals)
 
     @api.depends("create_date", "validity")
     def _compute_date(self):

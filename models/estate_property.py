@@ -1,4 +1,4 @@
-from odoo import fields, models, _, api
+from odoo import fields, models, _, api, exceptions
 from datetime import datetime, timedelta
 from odoo.exceptions import UserError, ValidationError
 from odoo.tools import float_compare
@@ -48,6 +48,13 @@ class EstateProperty(models.Model):
         default='new',
         compute="_compute_state"
     )
+
+    @api.ondelete(at_uninstall=False)
+    def _unlink_only_new_and_canceled(self):
+        if self.state == 'new' or self.state == 'canceled':
+            return True
+        else:
+            raise UserError(_('Only new and canceled properties can be deleted'))
 
     @api.depends("living_area", "garden_area")
     def _compute_area(self):

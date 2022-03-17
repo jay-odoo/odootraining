@@ -1,0 +1,8 @@
+ def max_price(self):
+        return max(self.offer_ids.mapped('price'))
+
+        if self.env['estate.property'].browse(vals['property_id']).max_price() > int(
+                self.env['estate.property.offer'].browse(vals['price'])):
+            err_str = "Price must be greater than " + str(
+                self.env['estate.property'].browse(vals['property_id']).max_price())
+            raise UserError(err_str)
