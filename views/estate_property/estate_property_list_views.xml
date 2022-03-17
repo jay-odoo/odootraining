@@ -5,8 +5,10 @@
         <field name="name">estate.property.tree</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
-            <tree string="List">
+            <tree string="List" decoration-success="state=='offer received' or state=='offer accepted'"
+                  decoration-bf="state=='offer accepted'" decoration-muted="state=='sold'">
                 <field name="name"/>
+                <field name="garden" invisible="1"/>
                 <field name="tag_ids" string="Tags"/>
                 <field name="property_type_id" string="Property Type"/>
                 <field name="postcode"/>
@@ -15,6 +17,7 @@
                 <field name="expected_price" />
                 <field name="selling_price" />
                 <field name="date_availability" string="Date Available From"/>
+                <field name="state" invisible="1"/>
             </tree>
         </field>
     </record>

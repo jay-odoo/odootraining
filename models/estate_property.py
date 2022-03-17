@@ -1,11 +1,13 @@
-from odoo import fields, models, api
+from odoo import fields, models, _, api
 from datetime import datetime, timedelta
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools import float_compare
 
 
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Estate Property Details"
+    _order = "id desc"
 
     name = fields.Char(required=True, default="Unknown")
     tag_ids = fields.Many2many("estate.property.tag", string="Property Tags")
@@ -43,7 +45,8 @@ class EstateProperty(models.Model):
         string='State',
         selection=[('new', 'New'), ('offer received', 'Offer Received'), ('offer accepted', 'Offer Accepted'),
                    ('sold', 'Sold'), ('canceled', 'Canceled')],
-        default='new'
+        default='new',
+        compute="_compute_state"
     )
 
     @api.depends("living_area", "garden_area")
@@ -57,6 +60,28 @@ class EstateProperty(models.Model):
             if record.offer_ids.mapped('price'):
                 record.best_price = max(record.offer_ids.mapped('price'))
 
+    @api.depends("offer_ids", "sold_status")
+    def _compute_state(self):
+        for rec in self:
+            if rec.offer_ids:
+                for offer in rec.offer_ids:
+                    if offer.status == 'accepted':
+                        if rec.sold_status == "sold":
+                            rec.state = 'sold'
+                            return
+                        else:
+                            rec.state = 'offer accepted'
+                            return
+                    else:
+                        rec.state = 'offer received'
+                        return
+            elif rec.sold_status == "sold":
+                rec.state = 'sold'
+                return
+            else:
+                rec.state = 'new'
+                return
+
     @api.onchange("garden")
     def _onchange_garden(self):
         if self.garden:
@@ -65,13 +90,6 @@ class EstateProperty(models.Model):
         else:
             self.garden_area = 0
             self.garden_orientation = False
-
-    @api.onchange("offer_ids")
-    def _compute_sell_price(self):
-        for record in self:
-            if record.offer_ids.mapped('status') == 'accepted':
-                print("+++++++++++++++++++++++++++=====")
-                print(record.offer_ids.mapped('price'))
 
     def sold_action(self):
         for record in self:
@@ -93,7 +111,15 @@ class EstateProperty(models.Model):
                 raise UserError("Property already canceled")
             return True
 
-    def set_buyer(self):
+    @api.constrains('selling_price')
+    def _check_selling_price(self):
         for rec in self:
-            return True
+            if float_compare(rec.selling_price, (rec.expected_price * 0.9), 2) < 0:
+                raise ValidationError("Selling price must be 90% of expected price")
 
+    _sql_constraints = [
+        ('check_expected_price', 'CHECK(expected_price > 0.0)',
+         "The expected Price can be positive value only."),
+        ('check_selling_price', 'CHECK(selling_price >= 0.0)',
+         "The selling Price can be positive value only."),
+    ]

@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 class EstatePropertyOffer(models.Model):
     _name = 'estate.property.offer'
     _description = 'Property Offer'
+    _order = "price desc"
 
     price = fields.Float()
     status = fields.Selection(
@@ -14,6 +15,7 @@ class EstatePropertyOffer(models.Model):
         copy=False)
     partner_id = fields.Many2one("res.partner", required=True)
     property_id = fields.Many2one("estate.property")
+    property_type_id = fields.Many2one(related='property_id.property_type_id', store=True)
     create_date = fields.Date(string='Created date')
     validity = fields.Integer(default=7)
     date_deadline = fields.Date(compute="_compute_date", inverse="_inverse_date", store=True)
@@ -42,16 +44,7 @@ class EstatePropertyOffer(models.Model):
                 rec.status = 'refused'
         return True
 
-    # @api.onchange("status")
-    # def _onchange_status(self):
-    #     print("==================")
-    #     # print(self.property_id.offer_ids.mapped('price'))
-    #     print(self.price)
-    #     print(self.property_id.selling_price)
-    #     print("==================")
-    #     if self.status == 'accepted':
-    #         self.property_id.selling_price = self.price
-    #     print("==================")
-    #     # print(self.property_id.offer_ids.mapped('price'))
-    #     print(self.property_id.selling_price)
-    #     print("==================")
+    _sql_constraints = [
+        ('check_price', 'CHECK(price > 0.0)',
+         "The Price can be positive value only."),
+    ]
