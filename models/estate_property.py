@@ -9,7 +9,7 @@ class EstateProperty(models.Model):
     _description = "Estate Property Details"
     _order = "id desc"
 
-    name = fields.Char(required=True, default="Unknown")
+    name = fields.Char(required=True, default="Unknown", help="Enter Name of property", translate=True)
     tag_ids = fields.Many2many("estate.property.tag", string="Property Tags")
     user_id = fields.Many2one("res.users", string="Salesman", default=lambda self: self.env.user)
     partner_id = fields.Many2one("res.partner", string="Buyer", copy=False)
@@ -33,8 +33,8 @@ class EstateProperty(models.Model):
     total_area = fields.Integer(compute='_compute_area', store=True)
     sold_status = fields.Selection(
         string='Status',
-        selection=[('new', 'New'), ('sold', 'Sold'), ('canceled', 'Canceled')],
-        default='new'
+        default='new',
+        selection=[('new', 'New'), ('sold', 'Sold'), ('canceled', 'Canceled')]
     )
     active = fields.Boolean(default=True)
     garden_orientation = fields.Selection(
@@ -79,6 +79,9 @@ class EstateProperty(models.Model):
                         else:
                             rec.state = 'offer accepted'
                             return
+                    elif rec.sold_status == "sold":
+                        rec.state = 'sold'
+                        return
                     else:
                         rec.state = 'offer received'
                         return
