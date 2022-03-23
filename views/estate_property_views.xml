@@ -38,11 +38,11 @@
                                     Expected Price:
                                     <field name="expected_price"/>
                                 </div>
-                                <div t-if="record.state == 'offer_received'">
+                                <div t-if="record.state == 'offer received'">
                                     Best Offer:
                                     <field name="best_price"/>
                                 </div>
-                                <div t-if="record.selling_price">
+                                <div t-if="record.selling_price.raw_value">
                                     Selling Price:
                                     <field name="selling_price"/>
                                 </div>
@@ -78,7 +78,6 @@
                             </div>
                             <div class="row my-2">
                                 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-
                             </div>
                             <div class="row my-5">
                                 <div class="col-sm">
@@ -174,10 +173,31 @@
             </field>
         </record>
 
+        <record id="estate_property_view_calendar" model="ir.ui.view">
+            <field name="name">estate.property.calendar</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <calendar string="Test" date_start="create_date" date_stop="date_availability" color="id">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="estate_property_view_graph" model="ir.ui.view">
+            <field name="name">estate.property.graph</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <graph string="Properties">
+                    <field name="partner_id"/>
+                    <field name="postcode"/>
+                </graph>
+            </field>
+        </record>
+
         <record id="estate_property_action" model="ir.actions.act_window">
             <field name="name">Properties</field>
             <field name="res_model">estate.property</field>
-            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_mode">tree,kanban,form,calendar,graph</field>
             <field name="context">{'search_default_available': True, 'search_default_current': True}</field>
         </record>
     </data>

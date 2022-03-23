@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="estate_property_update_view_form" model="ir.ui.view">
+            <field name="name">estate.property.update.form</field>
+            <field name="model">estate.property.update</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="bedrooms"/>
+                            <field name="living_area"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="update_field" string="Update" type="object"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="wizard_update_field" model="ir.actions.act_window">
+            <field name="name">Update Fields</field>
+            <field name="res_model">estate.property.update</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="estate_property_update_view_form"/>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="model_estate_property"/>
+            <field name="binding_view_types">form</field>
+        </record>
+    </data>
+</odoo>
+

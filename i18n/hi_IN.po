@@ -1,0 +1,594 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* estate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-23 05:57+0000\n"
+"PO-Revision-Date: 2022-03-23 05:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: Hindi \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: hi\n"
+"Plural-Forms: \n"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property_offer__status__accepted
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_offer_tree_view
+msgid "Accepted"
+msgstr "स्वीकार किया"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__active
+msgid "Active"
+msgstr "क्रियात्मक"
+
+#. module: estate
+#: model:ir.ui.menu,name:estate.estate_first_level_first_menu
+msgid "Advertisement"
+msgstr "विज्ञापन"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+msgid "Archived"
+msgstr "संग्रहीत"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+msgid "Available"
+msgstr "उपलब्ध"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Available From"
+msgstr "से उपलब्ध"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__bedrooms
+#: model:ir.model.fields,field_description:estate.field_estate_property_update__bedrooms
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+msgid "Bedrooms"
+msgstr "बेडरूम"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_kanban
+msgid "Best Offer:"
+msgstr "सबसे अच्छा प्रस्ताव:"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__best_price
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Best Price"
+msgstr "सबसे अच्छी कीमत"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__partner_id
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Buyer"
+msgstr "खरीददार"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_update_view_form
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__sold_status__canceled
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__canceled
+msgid "Canceled"
+msgstr "रद्द"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__city
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "City"
+msgstr "शहर"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__color
+msgid "Color Index"
+msgstr "रंग सूचकांक"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__create_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__create_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__create_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__create_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_update__create_uid
+msgid "Created by"
+msgstr "के द्वारा बनाई गई"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__create_date
+msgid "Created date"
+msgstr "रचना तिथि"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__create_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__create_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__create_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_update__create_date
+msgid "Created on"
+msgstr "पर बनाया"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__date_availability
+msgid "Date Availability"
+msgstr "दिनांक उपलब्धता"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_tree
+msgid "Date Available From"
+msgstr "से उपलब्ध तिथि"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__date_deadline
+msgid "Date Deadline"
+msgstr "दिनांक समय सीमा"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__description
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Description"
+msgstr "वर्णन"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__display_name
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__display_name
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__display_name
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__display_name
+#: model:ir.model.fields,field_description:estate.field_estate_property_update__display_name
+msgid "Display Name"
+msgstr "वर्णन"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__garden_orientation__east
+msgid "East"
+msgstr "पूर्व"
+
+#. module: estate
+#: model:ir.model.fields,help:estate.field_estate_property__name
+msgid "Enter Name of property"
+msgstr "संपत्ति का नाम दर्ज करें"
+
+#. module: estate
+#: model:ir.model,name:estate.model_estate_property
+msgid "Estate Property Details"
+msgstr "संपत्ति विवरण"
+
+#. module: estate
+#: model:ir.model,name:estate.model_estate_property_tag
+msgid "Estate Property Tag details"
+msgstr "संपत्ति टैग विवरण"
+
+#. module: estate
+#: model:ir.model,name:estate.model_estate_property_type
+msgid "Estate Property Type details"
+msgstr "संपत्ति प्रकार विवरण"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__expected_price
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+msgid "Expected Price"
+msgstr "अपेक्षित मूल्य"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_kanban
+msgid "Expected Price:"
+msgstr "अपेक्षित मूल्य"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__facades
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+msgid "Facades"
+msgstr "अग्रभाग"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__garage
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Garage"
+msgstr "गेराज"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__garden
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Garden"
+msgstr "बगीचा"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__garden_area
+msgid "Garden Area"
+msgstr "गार्डन क्षेत्र"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Garden Area(sqm)"
+msgstr "गार्डन एरिया (एसक्यूएम)"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__garden_orientation
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Garden Orientation"
+msgstr "उद्यान अभिविन्यास"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+msgid "Group By"
+msgstr "द्वारा समूह बनाएं"
+
+#. module: estate
+#: model:estate.property,name:estate.p1
+msgid "House in Ahmedabad"
+msgstr "अहमदाबाद में घर"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__id
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__id
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__id
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__id
+#: model:ir.model.fields,field_description:estate.field_estate_property_update__id
+msgid "ID"
+msgstr "पहचान"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property____last_update
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer____last_update
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag____last_update
+#: model:ir.model.fields,field_description:estate.field_estate_property_type____last_update
+#: model:ir.model.fields,field_description:estate.field_estate_property_update____last_update
+msgid "Last Modified on"
+msgstr "अंतिम बार संशोधित"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__write_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__write_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__write_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__write_uid
+#: model:ir.model.fields,field_description:estate.field_estate_property_update__write_uid
+msgid "Last Updated by"
+msgstr "अंतिम द्वारा अपडेट किया गया"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__write_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__write_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__write_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__write_date
+#: model:ir.model.fields,field_description:estate.field_estate_property_update__write_date
+msgid "Last Updated on"
+msgstr "अंतिम बार अद्यतन किया गया"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_tree
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_tree
+msgid "List"
+msgstr "सूची"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__living_area
+#: model:ir.model.fields,field_description:estate.field_estate_property_update__living_area
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+msgid "Living Area"
+msgstr "लिविंग एरिया"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_tree
+msgid "Living Area (sqm)"
+msgstr "रहने का क्षेत्र (वर्गमीटर)"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_offer_form_view
+msgid "ModelTitle"
+msgstr "मॉडाइनलाइन।"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__name
+#: model:ir.model.fields,field_description:estate.field_estate_property_tag__name
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__name
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_type_search
+msgid "Name"
+msgstr "नाम"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__sold_status__new
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__new
+msgid "New"
+msgstr "नया"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__garden_orientation__north
+msgid "North"
+msgstr "उत्तर"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__offer_accepted
+msgid "Offer Accepted"
+msgstr "प्रस्ताव स्वीकृत है"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__offer_count
+msgid "Offer Count"
+msgstr "प्रस्ताव गिनती"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__offer_received
+msgid "Offer Received"
+msgstr "प्रस्ताव प्राप्त"
+
+#. module: estate
+#: code:addons/estate/models/estate_property_type.py:0
+#: model:ir.model.fields,field_description:estate.field_estate_property__offer_ids
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__offer_ids
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_offer_tree_view
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+#, python-format
+msgid "Offers"
+msgstr "ऑफर"
+
+#. module: estate
+#: code:addons/estate/models/estate_property.py:0
+#, python-format
+msgid "Only new and canceled properties can be deleted"
+msgstr "केवल नए और रद्द किए गए गुणों को हटाया जा सकता है"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Other info"
+msgstr "अन्य सूचना"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__partner_id
+msgid "Partner"
+msgstr "साथी"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__postcode
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+msgid "Postcode"
+msgstr "पोस्टकोड"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__price
+msgid "Price"
+msgstr "कीमत"
+
+#. module: estate
+#: model:ir.actions.act_window,name:estate.estate_property_action
+#: model:ir.ui.menu,name:estate.estate_property_menu_action
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_graph
+msgid "Properties"
+msgstr "गुण"
+
+#. module: estate
+#: model:ir.actions.act_window,name:estate.estate_property_type_action
+#: model:ir.ui.menu,name:estate.estate_property_type_menu_action
+msgid "Properties Types"
+msgstr "गुण प्रकार"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__property_id
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__property_ids
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+msgid "Property"
+msgstr "संपत्ति"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_res_users__property_ids
+msgid "Property Ids"
+msgstr "संपत्ति आईडी"
+
+#. module: estate
+#: model:ir.model,name:estate.model_estate_property_offer
+msgid "Property Offer"
+msgstr "संपत्ति प्रस्ताव"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__tag_ids
+msgid "Property Tags"
+msgstr "संपत्ति टैग"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__property_type_id
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__property_type_id
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Property Type"
+msgstr "सम्पत्ती के प्रकार"
+
+#. module: estate
+#: model:ir.ui.menu,name:estate.estate_menu_root
+msgid "Real Estate"
+msgstr "रियल एस्टेट"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.res_users_view_form
+msgid "Real Estate Properties"
+msgstr "रियल एस्टेट गुण"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property_offer__status__refused
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_offer_tree_view
+msgid "Refused"
+msgstr "मना कर दिया"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__user_id
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Salesman"
+msgstr "विक्रेता"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_search
+#: model_terms:ir.ui.view,arch_db:estate.view_estate_property_type_search
+msgid "Search Property"
+msgstr "संपत्ति खोज"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_tag_search
+msgid "Search Tag Name"
+msgstr "टैग नाम खोजें"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__selling_price
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Selling Price"
+msgstr "विक्रय मूल्य"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_kanban
+msgid "Selling Price:"
+msgstr "विक्रय मूल्य:"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_type__sequence
+msgid "Sequence"
+msgstr "अनुक्रम"
+
+#. module: estate
+#: model:ir.ui.menu,name:estate.estate_first_level_second_menu
+msgid "Settings"
+msgstr "समायोजन"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__sold_status__sold
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__state__sold
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Sold"
+msgstr "बेचा"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Sold Status"
+msgstr "बेचा स्थिति"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__garden_orientation__south
+msgid "South"
+msgstr "दक्षिण"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__state
+msgid "State"
+msgstr "राज्य"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__sold_status
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__status
+msgid "Status"
+msgstr "स्थिति"
+
+#. module: estate
+#: model:ir.actions.act_window,name:estate.estate_property_tag_action
+#: model:ir.ui.menu,name:estate.estate_property_tag_menu_action
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_tree
+msgid "Tags"
+msgstr "टैग"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_calendar
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Test"
+msgstr "परीक्षा"
+
+#. module: estate
+#: model:ir.model.constraint,message:estate.constraint_estate_property_offer_check_price
+msgid "The Price can be positive value only."
+msgstr "कीमत केवल सकारात्मक मूल्य हो सकती है।"
+
+#. module: estate
+#: model:ir.model.constraint,message:estate.constraint_estate_property_tag_unique_tag_name
+msgid "The Tag must be unique"
+msgstr "टैग अद्वितीय होना चाहिए"
+
+#. module: estate
+#: model:ir.model.constraint,message:estate.constraint_estate_property_type_unique_type_name
+msgid "The Type must be unique"
+msgstr "प्रकार अद्वितीय होना चाहिए"
+
+#. module: estate
+#: model:ir.model.constraint,message:estate.constraint_estate_property_check_expected_price
+msgid "The expected Price can be positive value only."
+msgstr "अपेक्षित मूल्य केवल सकारात्मक मूल्य हो सकता है।"
+
+#. module: estate
+#: model:ir.model.constraint,message:estate.constraint_estate_property_check_selling_price
+msgid "The selling Price can be positive value only."
+msgstr "बिक्री मूल्य केवल सकारात्मक मूल्य हो सकता है।"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property__total_area
+msgid "Total Area"
+msgstr "कुल क्षेत्रफल"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_view_form
+msgid "Total Area(sqm)"
+msgstr "कुल क्षेत्र (वर्गमीटर)"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_update_view_form
+msgid "Update"
+msgstr "अद्यतन"
+
+#. module: estate
+#: model:ir.actions.act_window,name:estate.wizard_update_field
+msgid "Update Fields"
+msgstr "अद्यतन फ़ील्ड"
+
+#. module: estate
+#: model:ir.model,name:estate.model_estate_property_update
+msgid "Updates bedrooms and Living Area"
+msgstr "बेडरूम और रहने का क्षेत्र अपडेट"
+
+#. module: estate
+#: model:ir.model.fields,help:estate.field_estate_property_type__sequence
+msgid "Used to order stages. Lower is better."
+msgstr "चरणों का आदेश दिया।कम बेहतर है।"
+
+#. module: estate
+#: model:ir.model,name:estate.model_res_users
+msgid "Users"
+msgstr "उपयोगकर्ताओं"
+
+#. module: estate
+#: model:ir.model.fields,field_description:estate.field_estate_property_offer__validity
+msgid "Validity"
+msgstr "वैधता"
+
+#. module: estate
+#: model:ir.model.fields.selection,name:estate.selection__estate_property__garden_orientation__west
+msgid "West"
+msgstr "पश्चिम"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_tag_view_form
+msgid "estate_property_tag_form"
+msgstr "संपत्ति संपत्ति टैग फॉर्म"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_tag_view_tree
+msgid "estate_property_tag_tree"
+msgstr "संपत्ति संपत्ति टैग सूची"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_tag_search
+msgid "string"
+msgstr "डोरी"
+
+#. module: estate
+#: model_terms:ir.ui.view,arch_db:estate.estate_property_type_view_form
+msgid "tree"
+msgstr "सूची"

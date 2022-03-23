@@ -133,3 +133,4 @@ class EstateProperty(models.Model):
         ('check_selling_price', 'CHECK(selling_price >= 0.0)',
          "The selling Price can be positive value only."),
     ]
+

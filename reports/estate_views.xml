@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Main report templates -->
+    <template id="report_property">
+        <t t-foreach="docs" t-as="property">
+            <t t-call="web.html_container">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <h2>Property :
+                            <span t-field="property.name"/>
+                        </h2>
+                        <hr/>
+                        <div class="row my-5">
+                            <div class="col-6">
+                                <div class="my-2">
+                                    <strong>Property Type :</strong>
+                                    <span t-field="property.property_type_id"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Postcode :</strong>
+                                    <span t-field="property.postcode"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Available From :</strong>
+                                    <span t-field="property.date_availability"/>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="my-2">
+                                    <strong>Expected Price :</strong>
+                                    <span t-field="property.expected_price"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Best Offer :</strong>
+                                    <span t-field="property.best_price"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Selling Price :</strong>
+                                    <span t-field="property.selling_price"/>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>
+                            Information
+                        </h4>
+                        <hr/>
+                        <div class="row my-5">
+                            <div class="col-6">
+                                <div class="my-2">
+                                    <strong>Description :</strong>
+                                    <span t-field="property.description"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Bedrooms :</strong>
+                                    <span t-field="property.bedrooms"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Living Area (sqm) :</strong>
+                                    <span t-field="property.living_area"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Facades :</strong>
+                                    <span t-field="property.facades"/>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="my-2">
+                                    <strong>Garage :</strong>
+                                    <span t-field="property.garage"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Garden :</strong>
+                                    <span t-field="property.garden"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Garden Area (sqm) :</strong>
+                                    <span t-field="property.garden_area"/>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Total Area (sqm) :</strong>
+                                    <span t-field="property.total_area"/>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 style="margin-bottom: 24px;">
+                            Offers
+                        </h4>
+                        <table class="table" t-if="property.offer_ids">
+                            <thead>
+                                <tr>
+                                    <th>Price</th>
+                                    <th>Partner</th>
+                                    <th>Validity (days)</th>
+                                    <th>Deadline</th>
+                                    <th>State</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="offers" t-value="property.mapped('offer_ids')"/>
+                                <tr t-foreach="offers" t-as="offer">
+                                    <td>
+                                        <span t-field="offer.price"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="offer.partner_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="offer.validity"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="offer.date_deadline"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="offer.status"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <strong t-else="">No offers !!</strong>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

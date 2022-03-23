@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+          <record id="p1" model="estate.property">
+            <field name="name">House in Ahmedabad</field>
+            <field name="description">House in eco-friendly Environment</field>
+            <field name="postcode">382481</field>
+            <field name="city">Ahmedabad, Gujarat</field>
+            <field name="expected_price">7500000</field>
+            <field name="bedrooms">3</field>
+            <field name="living_area">500</field>
+            <field name="garden">True</field>
+            <field name="garden_area">50</field>
+            <field name="garden_orientation">south</field>
+          </record>
+    </data>
+</odoo>
